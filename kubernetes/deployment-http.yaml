@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${APPLICATION_NAME}-deployment-http
+  labels:
+    app: ${APPLICATION_NAME}-deployment-http
+spec:
+  selector:
+    matchLabels:
+      app: ${APPLICATION_NAME}-http
+  replicas: 1
+  template:
+    metadata:
+      name: ${APPLICATION_NAME}-http
+      labels:
+        app: ${APPLICATION_NAME}-http
+    spec:
+      containers:
+        - name: ${APPLICATION_NAME}-http-image
+          image: ${OPENSHIFT_REGISTRY}/${OPENSHIFT_NAMESPACE}/${APPLICATION_NAME}-http:latest
+          env:
+          - name: APPLICATION_NAME
+            value: ${APPLICATION_NAME}

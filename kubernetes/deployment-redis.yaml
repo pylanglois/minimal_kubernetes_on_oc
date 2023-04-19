@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${APPLICATION_NAME}-deployment-redis
+  labels:
+    app: ${APPLICATION_NAME}-deployment-redis
+spec:
+  selector:
+    matchLabels:
+      app: ${APPLICATION_NAME}-redis
+  replicas: 1
+  template:
+    metadata:
+      name: ${APPLICATION_NAME}-redis
+      labels:
+        app: ${APPLICATION_NAME}-redis
+    spec:
+      containers:
+        - name: ${APPLICATION_NAME}-redis-image
+          image: ${OPENSHIFT_REGISTRY}/${OPENSHIFT_NAMESPACE}/${APPLICATION_NAME}-redis:latest

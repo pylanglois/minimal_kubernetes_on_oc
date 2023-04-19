@@ -1,0 +1,13 @@
+FROM python:3.11
+
+RUN mkdir /src
+WORKDIR /src
+
+RUN pip install "fastapi[all]" redis
+COPY src/http/ /src/
+
+# Openshift runs container without root privileges
+RUN chmod -R ugo+rwx /var/log && \
+    chmod -R ugo+rwx /var/run
+
+CMD ["uvicorn", "main:app", "--host=0.0.0.0", "--port=8080"]
