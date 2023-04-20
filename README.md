@@ -26,6 +26,8 @@ Things to know:
  - Route is an Openshift plugins that allows to access a Service from the outside with an URL using an internal DNS feature.  
  - You need to tag your image with the name of the Openshift registry. The full name is expected in the Deployment.  
 
+![Kubernetes on Openshift](kubernetes_on_openshift_concepts.drawio.png)
+
 The command `source ./load_env.sh` creates environment variables that allow to fill the blank in the files from the folder `dockerfiles/`, `kubernetes/` and `ci/`. This command will ask for your openshift password because we don't want to keep this password in a file.  
 Linux shell scripts can substitute environment variable automatically. `kubectl` don't. For this reason, we use `envsubst` that allows to replace the variables in kubernetes files with the actual values. This allows to use git to keep the configuration without the sensitive data. The file `.env` contains the sensitive data and is not versioned.   
 
