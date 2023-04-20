@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - targetPort: 6379
-      port: 6379
+    - targetPort: 16379
+      port: 16379
   selector:
     app: ${APPLICATION_NAME}-redis

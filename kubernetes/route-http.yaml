@@ -8,5 +8,5 @@ spec:
     name: ${APPLICATION_NAME}-service-http
     weight: 100
   port:
-    targetPort: 8080
+    targetPort: 8182
   wildcardPolicy: None

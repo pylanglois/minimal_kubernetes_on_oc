@@ -5,7 +5,7 @@ import redis
 app = FastAPI()
 r = redis.Redis(
     host=f"{os.environ['APPLICATION_NAME']}-service-redis",
-    port=6379)
+    port=16379)
 
 for n in range(10):
     r.rpush('queue_a', f'bar-{n}')

@@ -34,3 +34,9 @@ ci/all.sh runs those scripts in sequence:
  - push.sh: push the image into the openshift registry.  
  - deploy.sh: deploy all the configuration from the folder kubernetes/ on Openshift and restart existing Deployment.  
 
+## Troubleshooting  
+
+ - Check the log of the pod that crash.  
+ - Make sure that the name of the image contains the fullname: registry/namespace/image:tag  
+ - If your pod crashes with a permission denied on a file/folder, run the command `chmod -R ugo+rwx /your/folder` in the dockerfile.  
+  

@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - targetPort: 8080
-      port: 8080
+    - targetPort: 8182
+      port: 8182
   selector:
     app: ${APPLICATION_NAME}-http
