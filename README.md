@@ -19,10 +19,11 @@ ci/all.sh
 ## Explanation  
 
 Things to know:  
- - Kubernetes is stateless. You should not run a database in a pod because data will be lost each time the pod restarts.  
- - Openshift runs container without root privileges. You will need to tweak your docker image accordingly. see chmod.    
- - Deployment defines how to run a container (name, image, environments, ...).  
- - Service allows 2 sets of containers to communicate and is scoped by the namespace.  
+ - Kubernetes is stateless. You should not run a database in a pod because data will be lost each time the pod restarts.
+ - A pod is the littlest element in Kubernetes and is a concept close to a docker container.
+ - Openshift runs pod without root privileges. You will need to tweak your docker image accordingly. see chmod.    
+ - Deployment defines how to run a pod (name, image, environments, ...).  
+ - Service allows 2 sets of pods to communicate and is scoped by the namespace.  
  - Route is an Openshift plugins that allows to access a Service from the outside with an URL using an internal DNS feature.  
  - You need to tag your image with the name of the Openshift registry. The full name is expected in the Deployment.  
 
