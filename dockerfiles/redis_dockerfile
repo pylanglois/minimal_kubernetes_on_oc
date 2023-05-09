@@ -1,7 +1,8 @@
 FROM redis:latest
 
 # Openshift runs container without root privileges
-RUN chmod -R ugo+rwx /var/log && \
-    chmod -R ugo+rwx /var/run
+# Example:
+# RUN chmod -R ugo+rwx /var/log && \
+#     chmod -R ugo+rwx /var/run
 
 CMD [ "redis-server", "--port", "16379" ]

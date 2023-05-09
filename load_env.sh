@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ ! -f ./.env ]
+then
+    echo "ERROR!"
+    echo "You need to create the file .env with proper value. see .env-example for reference"
+    exit 1
+fi
+
 source .env
 
 # Read Password

@@ -17,3 +17,11 @@ async def root():
         "message": "Hello World!!!",
         "redis": r.lpop('queue_a')
     }
+
+@app.get("/reload")
+async def reload():
+    for n in range(10):
+        r.rpush('queue_a', f'bar-{n}')
+    return {
+        "message": "reloaded!",
+    }

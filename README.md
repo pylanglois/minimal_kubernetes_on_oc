@@ -12,7 +12,7 @@ Trying to document an almost pure kubernetes deployment without openshift flavor
 1. edit .env with the proper values for your context  
 1. from a bash terminal at project root (in the same folder as the file named load_env.sh) run:
 ```shell  
-source load_env.sh   
+source ./load_env.sh   
 ci/all.sh  
 ```  
 
